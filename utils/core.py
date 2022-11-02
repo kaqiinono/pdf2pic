@@ -35,16 +35,3 @@ def pyMuPDF_fitz(pdfPath, imagePath):
 
     endTime_pdf2img = datetime.datetime.now()  # 结束时间
     print('pdf2img时间=', (endTime_pdf2img - startTime_pdf2img).seconds)
-
-
-if __name__ == "__main__":
-    # 1、PDF地址
-    pdfPath = '../files'
-    # 2、需要储存图片的目录
-    imagePath = '../imgs'
-    fileList = []
-    getalltxt(pdfPath,fileList)
-
-    for file in fileList:
-        fileName = file.split("/")[-1].split('.')[0]
-        pyMuPDF_fitz(file, imagePath+'/'+fileName)
